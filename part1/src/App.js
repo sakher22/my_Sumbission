@@ -1,4 +1,24 @@
+function Header(props)
+{return(<p>
+  {props.course}
+</p>);}
+function Content(props)
+{
+  return(
+    <>
+    <p>{props.data1[0]} {props.data1[1]}</p>
+    <p>{props.data2[0]} {props.data2[1]}</p>
+    <p>{props.data3[0]} {props.data3[1]}</p>
+    </>
 
+  )
+}
+function Total(props)
+{
+  return(   
+    <p>Number of exercises {props.sum}</p>
+  )
+}
 function App() {
   const course = 'Half Stack application development'
   const part1 = 'Fundamentals of React'
@@ -10,17 +30,9 @@ function App() {
 
   return (
     <div>
-      <h1>{course}</h1>
-      <p>
-        {part1} {exercises1}
-      </p>
-      <p>
-        {part2} {exercises2}
-      </p>
-      <p>
-        {part3} {exercises3}
-      </p>
-      <p>Number of exercises {exercises1 + exercises2 + exercises3}</p>
+      <Header course={course}/>
+      <Content data1={[part1,exercises1]} data2={[part2,exercises2]} data3={[part3,exercises3]}/>
+      <Total sum={exercises1 + exercises2 + exercises3}/>
     </div>
   )
 }
