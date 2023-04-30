@@ -2,15 +2,21 @@ function Header(props)
 {return(<p>
   {props.course}
 </p>);}
+
+function Part(props)
+{
+  return(
+    <p>{props.data[0]} {props.data[1]}</p>
+  )
+}
 function Content(props)
 {
   return(
-    <>
-    <p>{props.data1[0]} {props.data1[1]}</p>
-    <p>{props.data2[0]} {props.data2[1]}</p>
-    <p>{props.data3[0]} {props.data3[1]}</p>
-    </>
-
+    <div>
+      <Part data={props.data1}/>
+      <Part data={props.data2}/>
+      <Part data={props.data3}/>
+    </div>
   )
 }
 function Total(props)
